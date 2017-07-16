@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Authenticate } from "../../app/auth/models/user";
 
 @Component({
     selector: 'page-login',
@@ -9,29 +10,14 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 export class LoginPage {
     private readonly CLASS_NAME = 'LoginPage';
 
-    public loginForm: FormGroup;
+  // pending$ = this.store.select(fromAuth.getLoginPagePending);
+  // error$ = this.store.select(fromAuth.getLoginPageError);
 
-    constructor(
-        private formBuilder: FormBuilder,
-    ) {
+    constructor() {
         console.log(`%s:constructor`, this.CLASS_NAME);
-        this.createForm();
     }
 
-    private createForm(): void {
-        this.loginForm = this.formBuilder.group({
-            username: ['', Validators.required],
-            password: ['', [Validators.required, Validators.minLength(8)]],
-        });
-    }
-
-  onLogin() {
-    // this.submitted = true;
-    console.log('this.loginForm.value>', this.loginForm.value);
-    const formModel = this.loginForm.value;
-
-    if (this.loginForm.dirty && this.loginForm.valid) {
-      // this.authService.doLogin(formModel.username, formModel.password);
-    }
-  }    
+      onSubmit($event: Authenticate) {
+    // this.store.dispatch(new Auth.Login($event));
+  }   
 }

@@ -9,24 +9,10 @@
 
 <ion-content>
   <ion-list>
-    <form [formGroup]="loginForm" novalidate>
-      <ion-item>
-        <ion-label floating color="primary">Username</ion-label>
-        <ion-input type="text" formControlName="username">
-        </ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label floating color="primary">Password</ion-label>
-        <ion-input type="password" formControlName="password">
-        </ion-input>
-      </ion-item>
-
-      <ion-row responsive-sm>
-        <ion-col>
-          <button ion-button (click)="onLogin()" color="primary" block>Login</button>
-        </ion-col>
-      </ion-row>
-    </form>
+    <tja-login-form
+      (submitted)="onSubmit($event)"
+      [pending]="pending$ | async"
+      [errorMessage]="error$ | async">
+    </tja-login-form>
   </ion-list>
 </ion-content>
