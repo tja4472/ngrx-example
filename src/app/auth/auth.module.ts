@@ -5,20 +5,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 // import { MaterialModule } from '@angular/material';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { LoginPageComponent } from './containers/login-page.component';
-import { LoginFormComponent } from './components/login-form.component';
+// import { LoginPageComponent } from './containers/login-page.component';
+// import { LoginFormComponent } from './components/login-form.component';
 
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { AuthEffects } from './effects/auth.effects';
 import { reducers } from './reducers';
 
-export const COMPONENTS = [LoginPageComponent, LoginFormComponent];
+// export const COMPONENTS = [LoginPageComponent, LoginFormComponent];
 
 @NgModule({
   imports: [CommonModule, ReactiveFormsModule],
-  declarations: COMPONENTS,
-  exports: COMPONENTS,
+  // declarations: COMPONENTS,
+  // exports: COMPONENTS,
 })
 export class AuthModule {
   static forRoot(): ModuleWithProviders {
@@ -32,7 +32,7 @@ export class AuthModule {
 @NgModule({
   imports: [
     AuthModule,
-    RouterModule.forChild([{ path: 'login', component: LoginPageComponent }]),
+    // RouterModule.forChild([{ path: 'login', component: LoginPageComponent }]),
     StoreModule.forFeature('auth', reducers),
     EffectsModule.forFeature([AuthEffects]),
   ],
