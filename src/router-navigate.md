@@ -15,3 +15,9 @@ http://ionicframework.com/docs/api/navigation/IonicPage/
   // go to the MyPage component
   this.navCtrl.push('my-page');
   ```
+
+Support lazy loaded Modules, not pages
+https://github.com/ionic-team/ionic/issues/10980
+
+
+ionic doesn't do feature modules.
