@@ -8,6 +8,9 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login.page';
 
+import { Store } from '@ngrx/store';
+import * as FromRoot from './reducers';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -16,17 +19,24 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    private store: Store<FromRoot.State>,
+  ) {
     this.initializeApp();
+
+    // this.loginState$ = this.store.select(FromRoot.getLoginState);
 
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
       { title: 'Login', component: LoginPage },
-      
+
     ];
 
   }

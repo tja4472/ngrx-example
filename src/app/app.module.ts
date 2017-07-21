@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -13,9 +12,11 @@ import { LoginFormComponent } from '../components/login-form.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-// import { StoreModule } from '@ngrx/store';
+import { StoreModule } from '@ngrx/store';
 // import { EffectsModule } from '@ngrx/effects';
-// import { reducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+import { reducers } from './reducers';
 // import { AuthModule } from './auth/auth.module';
 
 @NgModule({
@@ -28,10 +29,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
-    // StoreModule.forRoot(reducers),
+    IonicModule.forRoot(MyApp),    
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument(),      
+
+  
     // EffectsModule.forRoot([]),
     // AuthModule.forRoot(),
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [

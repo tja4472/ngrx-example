@@ -2,6 +2,12 @@ import { Component } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Authenticate } from "../../app/auth/models/user";
 
+import { Store } from '@ngrx/store';
+
+interface AppState {
+  counter: number;
+}
+
 @Component({
     selector: 'page-login',
     templateUrl: 'login.page.html'
@@ -13,7 +19,9 @@ export class LoginPage {
   // pending$ = this.store.select(fromAuth.getLoginPagePending);
   // error$ = this.store.select(fromAuth.getLoginPageError);
 
-    constructor() {
+    constructor(
+          private store: Store<AppState>,
+    ) {
         console.log(`%s:constructor`, this.CLASS_NAME);
     }
 
