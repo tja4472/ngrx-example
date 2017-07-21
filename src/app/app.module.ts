@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -6,6 +7,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login.page';
+
+import { FindBookPage } from './books/pages/find-book/find-book';
 
 import { LoginFormComponent } from '../components/login-form.component';
 
@@ -23,6 +26,7 @@ import { reducers as booksReducers } from './books/reducers';
 @NgModule({
   declarations: [
     MyApp,
+    FindBookPage,
     HomePage,
     ListPage,
     LoginPage,
@@ -41,6 +45,7 @@ import { reducers as booksReducers } from './books/reducers';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    FindBookPage,
     HomePage,
     ListPage,
     LoginPage,
