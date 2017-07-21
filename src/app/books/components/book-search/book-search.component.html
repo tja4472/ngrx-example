@@ -1,0 +1,4 @@
+<ion-input type="text"
+           placeholder="Search for a book"
+           [value]="query"
+           (keyup)="search.emit($event.target.value)"></ion-input>

@@ -1,3 +1,4 @@
+import { BookSearchComponent } from './books/components/book-search/book-search.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -30,6 +31,7 @@ import { reducers as booksReducers } from './books/reducers';
     HomePage,
     ListPage,
     LoginPage,
+    BookSearchComponent,
     LoginFormComponent,
   ],
   imports: [

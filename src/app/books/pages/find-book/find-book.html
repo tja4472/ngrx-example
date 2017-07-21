@@ -1,6 +1,7 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
+    <button ion-button
+            menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Find Book</ion-title>
@@ -8,5 +9,7 @@
 </ion-header>
 
 <ion-content padding>
-
+  <bc-book-search [query]="searchQuery$ | async"
+                  [searching]="loading$ | async"
+                  (search)="search($event)"></bc-book-search>
 </ion-content>
