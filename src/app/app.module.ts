@@ -1,3 +1,6 @@
+import { HttpModule } from '@angular/http';
+import { GoogleBooksService } from './core/services/google-books';
+import { BookEffects } from './books/effects/book';
 import { BookSearchComponent } from './books/components/book-search/book-search.component';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,7 +20,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { StoreModule } from '@ngrx/store';
-// import { EffectsModule } from '@ngrx/effects';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { reducers } from './reducers';
@@ -36,13 +39,14 @@ import { reducers as booksReducers } from './books/reducers';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(),
     StoreModule.forFeature('books', booksReducers),
     StoreModule.forFeature('auth', authReducers),
 
-    // EffectsModule.forRoot([])
+    EffectsModule.forRoot([BookEffects])
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -55,7 +59,8 @@ import { reducers as booksReducers } from './books/reducers';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    GoogleBooksService,
   ]
 })
 export class AppModule { }
