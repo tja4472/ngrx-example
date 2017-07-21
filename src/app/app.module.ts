@@ -17,7 +17,8 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { reducers } from './reducers';
-// import { AuthModule } from './auth/auth.module';
+import { reducers as authReducers } from './auth/reducers';
+import { reducers as booksReducers } from './books/reducers';
 
 @NgModule({
   declarations: [
@@ -29,14 +30,13 @@ import { reducers } from './reducers';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),    
+    IonicModule.forRoot(MyApp),
     StoreModule.forRoot(reducers),
-    StoreDevtoolsModule.instrument(),      
+    StoreDevtoolsModule.instrument(),
+    StoreModule.forFeature('books', booksReducers),
+    StoreModule.forFeature('auth', authReducers),
 
-  
-    // EffectsModule.forRoot([]),
-    // AuthModule.forRoot(),
-
+    // EffectsModule.forRoot([])
   ],
   bootstrap: [IonicApp],
   entryComponents: [
