@@ -12,4 +12,5 @@
   <bc-book-search [query]="searchQuery$ | async"
                   [searching]="loading$ | async"
                   (search)="search($event)"></bc-book-search>
+  <bc-book-preview-list [books]="books$ | async"></bc-book-preview-list>
 </ion-content>

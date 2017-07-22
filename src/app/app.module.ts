@@ -1,7 +1,7 @@
 import { HttpModule } from '@angular/http';
 import { GoogleBooksService } from './core/services/google-books';
 import { BookEffects } from './books/effects/book';
-import { BookSearchComponent } from './books/components/book-search/book-search.component';
+
 
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -14,6 +14,8 @@ import { LoginPage } from '../pages/login/login.page';
 
 import { FindBookPage } from './books/pages/find-book/find-book';
 
+import { BookPreviewListComponent } from "./books/components/book-preview-list/book-preview-list.component";
+import { BookSearchComponent } from './books/components/book-search/book-search.component';
 import { LoginFormComponent } from '../components/login-form.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -27,6 +29,7 @@ import { reducers } from './reducers';
 import { reducers as authReducers } from './auth/reducers';
 import { reducers as booksReducers } from './books/reducers';
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -34,6 +37,7 @@ import { reducers as booksReducers } from './books/reducers';
     HomePage,
     ListPage,
     LoginPage,
+    BookPreviewListComponent,
     BookSearchComponent,
     LoginFormComponent,
   ],
