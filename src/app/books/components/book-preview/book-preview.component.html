@@ -1,2 +1,3 @@
-<h3>* {{ title }}</h3>
-{{ subtitle }}
+<h3>* {{ title | bcEllipsis:35 }}</h3>
+<p *ngIf="subtitle">{{ subtitle | bcEllipsis:40 }}</p>
+<p *ngIf="description">{{ description | bcEllipsis }}</p>

@@ -1,3 +1,4 @@
+import { PIPES } from './shared/pipes';
 
 import { HttpModule } from '@angular/http';
 import { GoogleBooksService } from './core/services/google-books';
@@ -31,7 +32,6 @@ import { reducers } from './reducers';
 import { reducers as authReducers } from './auth/reducers';
 import { reducers as booksReducers } from './books/reducers';
 
-
 @NgModule({
   declarations: [
     MyApp,
@@ -43,6 +43,7 @@ import { reducers as booksReducers } from './books/reducers';
     BookPreviewListComponent,
     BookSearchComponent,
     LoginFormComponent,
+    PIPES,
   ],
   imports: [
     BrowserModule,
