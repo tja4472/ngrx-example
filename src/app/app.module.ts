@@ -1,3 +1,4 @@
+
 import { HttpModule } from '@angular/http';
 import { GoogleBooksService } from './core/services/google-books';
 import { BookEffects } from './books/effects/book';
@@ -14,6 +15,7 @@ import { LoginPage } from '../pages/login/login.page';
 
 import { FindBookPage } from './books/pages/find-book/find-book';
 
+import { BookPreviewComponent } from './books/components/book-preview/book-preview.component';
 import { BookPreviewListComponent } from "./books/components/book-preview-list/book-preview-list.component";
 import { BookSearchComponent } from './books/components/book-search/book-search.component';
 import { LoginFormComponent } from '../components/login-form.component';
@@ -37,6 +39,7 @@ import { reducers as booksReducers } from './books/reducers';
     HomePage,
     ListPage,
     LoginPage,
+    BookPreviewComponent,
     BookPreviewListComponent,
     BookSearchComponent,
     LoginFormComponent,
