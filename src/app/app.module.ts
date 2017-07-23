@@ -1,3 +1,4 @@
+
 import { PIPES } from './shared/pipes';
 
 import { HttpModule } from '@angular/http';
@@ -16,6 +17,7 @@ import { LoginPage } from '../pages/login/login.page';
 
 import { FindBookPage } from './books/pages/find-book/find-book';
 
+import { BookAuthorsComponent } from './books/components/book-authors/book-authors.component';
 import { BookPreviewComponent } from './books/components/book-preview/book-preview.component';
 import { BookPreviewListComponent } from "./books/components/book-preview-list/book-preview-list.component";
 import { BookSearchComponent } from './books/components/book-search/book-search.component';
@@ -39,6 +41,7 @@ import { reducers as booksReducers } from './books/reducers';
     HomePage,
     ListPage,
     LoginPage,
+    BookAuthorsComponent,
     BookPreviewComponent,
     BookPreviewListComponent,
     BookSearchComponent,

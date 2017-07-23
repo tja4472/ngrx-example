@@ -10,6 +10,7 @@
         </p>
     </ion-card-header>
     <ion-card-content>
-         <p *ngIf="description">{{ description | bcEllipsis }}</p>
+        <p *ngIf="description">{{ description | bcEllipsis }}</p>
     </ion-card-content>
+    <bc-book-authors [book]="book"></bc-book-authors>
 </ion-card>
