@@ -21,3 +21,11 @@ https://github.com/ionic-team/ionic/issues/10980
 
 
 ionic doesn't do feature modules.
+
+
+book-preview component links to view-book-page via <a [routerLink]="['/books', id]"> i.e.
+```
+http://localhost:4200/#/books/WTgJAAAAQAAJ
+```
+
+

@@ -1,4 +1,3 @@
-
 import { PIPES } from './shared/pipes';
 
 import { HttpModule } from '@angular/http';
@@ -16,6 +15,7 @@ import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login.page';
 
 import { FindBookPage } from './books/pages/find-book/find-book';
+import { ViewBookPage } from './books/pages/view-book/view-book';
 
 import { BookAuthorsComponent } from './books/components/book-authors/book-authors.component';
 import { BookPreviewComponent } from './books/components/book-preview/book-preview.component';
@@ -41,6 +41,7 @@ import { reducers as booksReducers } from './books/reducers';
     HomePage,
     ListPage,
     LoginPage,
+    ViewBookPage,
     BookAuthorsComponent,
     BookPreviewComponent,
     BookPreviewListComponent,
@@ -51,7 +52,15 @@ import { reducers as booksReducers } from './books/reducers';
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(
+      MyApp,
+      {},
+      {
+        links: [
+          { component: HomePage, name: 'HomePage', segment: '' },
+          { component: ViewBookPage, name: 'ViewBookPage', segment: 'bookDetail/:bookId' },
+        ]
+      }),
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(),
     StoreModule.forFeature('books', booksReducers),
@@ -66,6 +75,7 @@ import { reducers as booksReducers } from './books/reducers';
     HomePage,
     ListPage,
     LoginPage,
+    ViewBookPage,
   ],
   providers: [
     StatusBar,

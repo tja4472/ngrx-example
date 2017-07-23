@@ -1,3 +1,4 @@
+
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -8,6 +9,8 @@ import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login.page';
 
 import { FindBookPage } from './books/pages/find-book/find-book';
+import { ViewBookPage } from './books/pages/view-book/view-book';
+
 import { Store } from '@ngrx/store';
 import * as FromRoot from './reducers';
 
@@ -37,7 +40,7 @@ export class MyApp {
       { title: 'List', component: ListPage },
       { title: 'Login', component: LoginPage },
       { title: 'Find Book', component: FindBookPage },
-
+      { title: 'View Book', component: ViewBookPage },
     ];
 
   }
