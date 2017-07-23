@@ -1,3 +1,15 @@
-<h3>* {{ title | bcEllipsis:35 }}</h3>
-<p *ngIf="subtitle">{{ subtitle | bcEllipsis:40 }}</p>
-<p *ngIf="description">{{ description | bcEllipsis }}</p>
+<ion-card>
+    <ion-card-header>
+        <img *ngIf="thumbnail"
+             [src]="thumbnail" />
+        <ion-card-title>
+            {{ title | bcEllipsis:35 }}
+        </ion-card-title>
+        <p *ngIf="subtitle">
+            {{ subtitle | bcEllipsis:40 }}
+        </p>
+    </ion-card-header>
+    <ion-card-content>
+         <p *ngIf="description">{{ description | bcEllipsis }}</p>
+    </ion-card-content>
+</ion-card>
