@@ -1,4 +1,6 @@
+import { ViewBookPage } from '../../pages/view-book/view-book';
 import { Component, Input } from '@angular/core';
+import { NavController } from 'ionic-angular';
 import { Book } from '../../models/book';
 
 @Component({
@@ -30,5 +32,14 @@ export class BookPreviewComponent {
     }
 
     return false;
+  }
+
+    constructor(
+      public navCtrl: NavController, 
+    ) {
+  }
+  goToViewBook(id: string) {
+    console.log('goToViewBook:id>', id);
+    this.navCtrl.push(ViewBookPage, { bookId: id })
   }
 }
