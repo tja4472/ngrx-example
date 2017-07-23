@@ -20,6 +20,9 @@ export class ViewBookPage {
     public navParams: NavParams,
     private store: Store<fromBooks.State>
   ) {
-    console.log('ViewBookPage:navParams.data>', navParams.data)
+    console.log('ViewBookPage:navParams.data>', navParams.data);
+    console.log('ViewBookPage:navParams.get("bookId")>', navParams.get('bookId'));
+    let bookId: string = navParams.get('bookId');
+    this.store.dispatch(new book.SelectAction(bookId));
   }
 }
