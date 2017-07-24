@@ -1,3 +1,4 @@
+import { BookDetailComponent } from './books/components/book-detail/book-detail.component';
 import { SelectedBookPageComponent } from './books/pages/selected-book/selected-book';
 import { PIPES } from './shared/pipes';
 
@@ -45,6 +46,7 @@ import { reducers as booksReducers } from './books/reducers';
     SelectedBookPageComponent,
     ViewBookPage,
     BookAuthorsComponent,
+    BookDetailComponent,
     BookPreviewComponent,
     BookPreviewListComponent,
     BookSearchComponent,
