@@ -1,3 +1,4 @@
+import { CollectionPageComponent } from './books/pages/collection/collection';
 import { BookDetailComponent } from './books/components/book-detail/book-detail.component';
 import { SelectedBookPageComponent } from './books/pages/selected-book/selected-book';
 import { PIPES } from './shared/pipes';
@@ -43,6 +44,7 @@ import { CollectionEffects } from "./books/effects/collection";
 @NgModule({
   declarations: [
     MyApp,
+    CollectionPageComponent,
     FindBookPage,
     HomePage,
     ListPage,
@@ -84,6 +86,7 @@ import { CollectionEffects } from "./books/effects/collection";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    CollectionPageComponent,
     FindBookPage,
     HomePage,
     ListPage,

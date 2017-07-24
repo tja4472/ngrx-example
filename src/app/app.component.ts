@@ -1,3 +1,4 @@
+import { CollectionPageComponent } from './books/pages/collection/collection';
 
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
@@ -39,6 +40,7 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
       { title: 'Login', component: LoginPage },
+      { title: 'Collection', component: CollectionPageComponent },
       { title: 'Find Book', component: FindBookPage },
       // { title: 'View Book', component: ViewBookPage },
     ];
