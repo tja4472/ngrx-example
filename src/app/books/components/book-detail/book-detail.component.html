@@ -3,14 +3,21 @@
         <img *ngIf="thumbnail"
              [src]="thumbnail" />
         <ion-card-title>
-            {{ title | bcEllipsis:35 }}
+            {{ title }}
         </ion-card-title>
         <p *ngIf="subtitle">
-            {{ subtitle | bcEllipsis:40 }}
+            {{ subtitle }}
         </p>
     </ion-card-header>
     <ion-card-content>
-        <p *ngIf="description">{{ description | bcEllipsis }}</p>
+        <p *ngIf="description">{{ description }}</p>
     </ion-card-content>
     <bc-book-authors [book]="book"></bc-book-authors>
+    <button ion-button
+            *ngIf="inCollection"
+            (click)="remove.emit(book)">Remove Book from Collection</button>
+    <button ion-button
+            color="secondary"
+            *ngIf="!inCollection"
+            (click)="add.emit(book)">Add Book to Collection</button>
 </ion-card>
