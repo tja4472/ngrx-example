@@ -31,10 +31,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { DBModule } from '@ngrx/db';
+
+import { schema } from './db';
 
 import { reducers } from './reducers';
 import { reducers as authReducers } from './auth/reducers';
 import { reducers as booksReducers } from './books/reducers';
+import { CollectionEffects } from "./books/effects/collection";
 
 @NgModule({
   declarations: [
@@ -70,7 +74,12 @@ import { reducers as booksReducers } from './books/reducers';
     StoreModule.forFeature('books', booksReducers),
     StoreModule.forFeature('auth', authReducers),
 
-    EffectsModule.forRoot([BookEffects])
+    EffectsModule.forRoot([
+      BookEffects,
+      CollectionEffects
+    ]),
+
+    DBModule.provideDB(schema),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
