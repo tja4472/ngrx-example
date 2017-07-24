@@ -1,3 +1,4 @@
+import { SelectedBookPageComponent } from './books/pages/selected-book/selected-book';
 import { PIPES } from './shared/pipes';
 
 import { HttpModule } from '@angular/http';
@@ -41,6 +42,7 @@ import { reducers as booksReducers } from './books/reducers';
     HomePage,
     ListPage,
     LoginPage,
+    SelectedBookPageComponent,
     ViewBookPage,
     BookAuthorsComponent,
     BookPreviewComponent,
