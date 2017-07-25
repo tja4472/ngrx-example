@@ -40,8 +40,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
       { title: 'Login', component: LoginPage },
-      { title: 'Collection', component: CollectionPageComponent },
-      { title: 'Find Book', component: FindBookPage },
+      { title: 'My Collection', component: CollectionPageComponent },
+      { title: 'Browse Books', component: FindBookPage },
       // { title: 'View Book', component: ViewBookPage },
     ];
 
