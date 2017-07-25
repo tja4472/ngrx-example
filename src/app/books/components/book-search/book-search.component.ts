@@ -10,7 +10,7 @@ import {
     templateUrl: 'book-search.component.html'
 })
 export class BookSearchComponent {
-    private _searching: boolean = false;
+    private _searching: boolean = true;
 
     @Input() query = '';
     // @Input() searching = false;
@@ -19,6 +19,8 @@ export class BookSearchComponent {
         this._searching = searching;
         console.log('searching>', this._searching);
     }
-
+    get searching() {
+        return this._searching;
+    }
     @Output() search = new EventEmitter<string>();
 }

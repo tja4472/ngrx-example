@@ -2,3 +2,6 @@
            placeholder="Search for a book"
            [value]="query"
            (keyup)="search.emit($event.target.value)"></ion-input>
+<div *ngIf="searching">
+    <ion-spinner></ion-spinner>
+</div>
